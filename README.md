@@ -14,6 +14,14 @@ a set of questions or items about me in JSON format.
 * Go into the client folder and run ```yarn && yarn start```.
 * Navigate to ```localhost:5000``` and check the GraphQL playground.
 
+### TOOLS USED
+
+* [mill](https://github.com/lihaoyi/mill) - Scala build tool.
+* [cask](https://www.lihaoyi.com/cask) - minimal Scala web framework.
+* [esm](https://github.com/standard-things/esm#readme) - simple JS module loader.
+* [apollo-server](https://github.com/apollographql/apollo-server) - GraphQL server.
+* [apollo-datasource-rest](https://www.npmjs.com/package/apollo-datasource-rest) - Apollo server REST API integration.
+
 ### IN PROGRESS
 
-* Containerising all the things with ```Docker```.
+* Containerizing all the things with ```Docker```.
