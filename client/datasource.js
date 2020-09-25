@@ -6,7 +6,7 @@ export class ThingsAPI extends RESTDataSource {
     this.baseURL = "http://localhost:8080/";
   }
 
-  async getQuestions() {
-    return this.get("dave/questions");
+  async getThings(format = "all") {
+    return this.get(`dave/${format}`);
   }
 }

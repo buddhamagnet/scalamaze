@@ -7,16 +7,16 @@ const typeDefs = gql`
     text: String
   }
   type Query {
-    questions: [Thing]
+    things(format: String): [Thing!]!
   }
 `;
 
 const resolvers = {
   Query: {
-    questions: async (_root, _, { dataSources }) => {
-      const b = await dataSources.thingsAPI.getQuestions();
-      console.dir(b);
-      return dataSources.thingsAPI.getQuestions();
+    things: async (_root, args, { dataSources }) => {
+      const data = await dataSources.thingsAPI.getThings(args.format);
+      console.dir(args);
+      return JSON.parse(data);
     },
   },
 };

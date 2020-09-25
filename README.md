@@ -9,10 +9,28 @@ a set of questions or items about me in JSON format.
 
 * Go into the server folder and run ```./mill -w app.runBackground```.
 * This will take some time on first run to download the build tool.
-* Navigate to ```http://localhost:8080/dave/questions```.
-* Navigate to ```http://localhost:8080/dave/about```.
 * Go into the client folder and run ```yarn && yarn start```.
-* Navigate to ```localhost:5000``` and check the GraphQL playground.
+* Navigate to ```localhost:5000``` and check the GraphQL playground:
+
+Some questions:
+
+```js
+query Questions {
+  things(format: "questions") {
+    text
+  }
+}
+```
+
+Some things about me:
+
+```js
+query Abut {
+  things(format: "about") {
+    text
+  }
+}
+```
 
 ### TOOLS USED
 

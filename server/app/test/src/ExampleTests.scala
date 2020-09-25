@@ -20,14 +20,14 @@ object ExampleTests extends TestSuite{
     test("MinimalApplication") - withServer(MinimalApplication) { host =>
       val success = requests.get(host)
 
-      success.text() ==> "Hello World!"
+      success.text() ==> "Hello Twitter!"
       success.statusCode ==> 200
 
       requests.get(s"$host/doesnt-exist", check = false).statusCode ==> 404
 
-      requests.post(s"$host/do-thing", data = "hello").text() ==> "olleh"
+      requests.get(s"$host/").text() ==> "Hello Twitter!"
 
-      requests.get(s"$host/do-thing", check = false).statusCode ==> 404
+      requests.get(s"$host/dave/questions", check = false).statusCode ==> 200
     }
   }
 }
